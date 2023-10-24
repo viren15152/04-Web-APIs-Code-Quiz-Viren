@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <title>04-Web-API's: Code Quiz</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="04-Web-API's: Code Quiz">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="author" content="Viren Lala">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Assets/reset.css">
+    <link rel="stylesheet" type="text/css" href="Assets/style.css">
+</head>
+<body>
+    <h1>Coding Quiz</h1>
+
+    <section id="stopWatch"> Timer:<p id="timer"></p>
+        <br>
+        <p id="fulltime">Welcome to the coding challenge quiz you will be tasked with solving some simple code based questions with a timer set to 100 seconds to answer them all.</p>
+        <br>
+        <p> I hope you're ready and please remeber to have fun with this quiz.</p>
+    </section>
+
+    <div class="quiz-container">
+        <div id="question" class="question">Questions</div>
+        <label class="option"><input type="radio" name="option" value="1" /><span id="opt1"></span></label>
+        <label class="option"><input type="radio" name="option" value="2" /><span id="opt2"></span></label>
+        <label class="option"><input type="radio" name="option" value="3" /><span id="opt3"></span></label>
+        <label class="option"><input type="radio" name="option" value="4" /><span id="opt4"></span></label>
+        <br> <!--Line break element to provide space in the webpage-->
+        <br>
+        <button id="start"onclick="clock();loadquestion(currentQuestion);">Start Quiz</button><br><!--Start Button-->
+        <br>
+        <button id="next"onclick="clock();loadNextQuestion();">Next</button><br><!--Next Question Button-->
+        <br>
+        <button id="submit"onclick="clearInterval(mytimer);disableButton()">Finish</button><br><!--Finish Button-->
+        <br>
+        <br>
+        <br>
+        <form style="display: inline" action="highscores.html" method="get"><button onclick="highscores.html">High Scores Page</button></form>
+
+    </div>
+
+    <script src="Assets/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: boarder box;
+    border: 0.5px solid purple;
+}
+
+body {
+    background-color: white;
+}
+
+h1 {
+    font-size: 1.7em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+section { 
+    font-size: 1.7em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+    color:purple;
+    font-size: 0.8em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+button:hover {
+    outline: none;
+    background-color: purple;
+    color: whitesmoke;
+    font-size: 1.2em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-spacing: 10%;
+}
+
+.outer-container {
+    padding: 10px;
+}
+
+div {
+    position: relative;
+    float: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heading-backgroud {
+    background-color: blueviolet;
+}
+
