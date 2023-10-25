@@ -16,13 +16,15 @@
 
     <section id="stopWatch"> Timer:<p id="timer"></p>
         <br>
-        <p id="fulltime">Welcome to the coding challenge quiz you will be tasked with solving some simple code based questions with a timer set to 100 seconds to answer them all.</p>
+        <p id="fulltime">Welcome to the online coding quiz you will be tasked with solving some simple code based questions. Please answer the questions as quickly as you can as you will be timed. If you are ready take on this challenge just click start to beign.</p>
         <br>
-        <p> I hope you're ready and please remeber to have fun with this quiz.</p>
+        <p> This is a simple Coding Quiz to test your knowledge on HTML,CSS and JavaScript.</p>
     </section>
 
     <div class="quiz-container">
+        <br>
         <div id="question" class="question">Questions</div>
+        <br>
         <label class="option"><input type="radio" name="option" value="1" /><span id="opt1"></span></label>
         <label class="option"><input type="radio" name="option" value="2" /><span id="opt2"></span></label>
         <label class="option"><input type="radio" name="option" value="3" /><span id="opt3"></span></label>
@@ -33,7 +35,7 @@
         <br>
         <button id="next"onclick="clock();loadNextQuestion();">Next</button><br><!--Next Question Button-->
         <br>
-        <button id="submit"onclick="clearInterval(mytimer);disableButton()">Finish</button><br><!--Finish Button-->
+        <button id="submit"onclick="clearInterval(mytimer);disableButton()">Submit</button><br><!--Submit-->
         <br>
         <br>
         <br>
@@ -41,7 +43,8 @@
 
     </div>
 
-    <script src="Assets/script.js"></script>
+    <script src="Assets/js/script.js"></script>
+    <script src="Assets/js/questions.js"></script>
 
 
 </body>
