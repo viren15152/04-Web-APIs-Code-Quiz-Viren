@@ -4,17 +4,26 @@ var score = 0;
 var c = 300;
 //var totquestions = questions.length;
 var questionContainer = document.getElementById("quiz-container");
-var questionEl = document.getElementById("question");
+var questionEl = document.getElementById("stimulus");
 var opt1 = document.getElementById("opt1");
 var opt2 = document.getElementById("opt2");
 var opt3 = document.getElementById("opt3");
 var opt4 = document.getElementById("opt4");
-var nextBtn = document.getElementById("next");
+var radio1 = document.getElementById("radio1");
+var radio2 = document.getElementById("radio2");
+var radio3 = document.getElementById("radio3");
+var radio4 = document.getElementById("radio4");
 var startBtn = document.getElementById("start");
 var info = document.getElementById("info");
-var subBtn = document.getElementById("submit");
 var resultBtn = document.getElementById("result");
-var stimulus = document.getElementById("stimulus");
+
+
+opt1.addEventListener("click",checkAnswer)
+opt2.addEventListener("click",checkAnswer)
+opt3.addEventListener("click",checkAnswer)
+opt4.addEventListener("click",checkAnswer)
+
+
 var questions   = [{
     question: "What does HTML stand for?",
     option1: "Home Tool Mark Up Language",
@@ -100,31 +109,42 @@ var questions   = [{
 },
 
 ];
+
 //This section will load the questions and allow the user to select their options
 function loadNextQuestion() {
-    var userChoice = document.querySelector('input[type=radio]:checked');
-    if(userChoice){
-        alert("Please select answer.");
-        return;
-    }
-    var answer = userChoice.value;
-    if(questions[currentQuestion].answer === answer){
+   questionEl.innerText = questions[currentQuestion].question
+   radio1.innerText = questions[currentQuestion].option1
+   radio2.innerText = questions[currentQuestion].option2
+   radio3.innerText = questions[currentQuestion].option3
+   radio4.innerText = questions[currentQuestion].option4
+}
+function checkAnswer(event){
+    //var userChoice = document.querySelector('input[type=radio]:checked');
+   var userChoice = event.target.value
+   console.log(userChoice)
+   
+    if(questions[currentQuestion].answer === userChoice){
         score += 1;
     }
-    userChoice.checked = false;
-    currentQuestion ++;
-    if (currentQuestion == totquestions){
-        startBtn.style.visibility='hidden';
-        nextBtn.style.visibility='hidden';
-        quizContainer.style.display='none';
-        result.style.display="";
-        result.textContent = score;
-        return;
+  
+   
+    //if (currentQuestion == totquestions){
+        //startBtn.style.visibility='hidden';
+        //nextBtn.style.visibility='hidden';
+        //quizContainer.style.display='none';
+        //result.style.display="";
+        //result.textContent = score;
+        //return;
+    //}
+    if(currentQuestion < questions.length -1) {
+        currentQuestion ++
+        event.target.checked = false;
+        loadNextQuestion();
     }
-    loadQuestion(currentQuestion);
+    
 }
 
-//Timer (Stopwatch)
+//Timer (Stopwatch)//My timer was working in previous commits but has suddenly stopped working I'm not really sure what the issue is.
 
 var myTimer;
 function clock () {
@@ -138,7 +158,8 @@ function clock () {
 }
 function startQuiz(){
     info.style.display = "none";
-    stimulus.innerHTML = questions[0].question
+    loadNextQuestion()
 }
 
-document.getElementById("start").addEventListener("click",startQuiz) 
+document.getElementById("start").addEventListener("click",startQuiz)
+
